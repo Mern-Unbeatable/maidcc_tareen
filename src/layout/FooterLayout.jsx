@@ -1,5 +1,3 @@
-
-
 const FooterLayout = () => {
   const currentYear = new Date().getFullYear();
 
