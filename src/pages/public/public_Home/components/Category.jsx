@@ -63,10 +63,15 @@ const Category = () => {
                 <Link to={`/services/${card.slug}`} className="flex items-center gap-2 relative text-gray-200 px-5 py-2.5 rounded-full text-sm font-medium border border-gray-600/50 transition-colors btn-ani hover:bg-white/10">
                   <span>Learn More</span>
                 </Link>
-                <button className="flex items-center gap-2 bg-categoryBtn text-white px-5 py-2.5 rounded-full text-sm font-medium btn-ani">
+                <Link
+                  to="https://wa.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-categoryBtn text-white px-5 py-2.5 rounded-full text-sm font-medium btn-ani"
+                >
                   <FaWhatsapp className="w-4 h-4" />
                   <span>{card.primaryBtnText}</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

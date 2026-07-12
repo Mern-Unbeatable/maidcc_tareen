@@ -1,12 +1,13 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router";
 import Container from "../../layout/Container";
 
 const Pricing = ({ plans = [] }) => {
   if (!plans || plans.length === 0) return null;
 
   return (
-    <section className="section-padding bg-white relative z-20">
+    <section id="pricing" className="section-padding bg-white relative z-20">
       <Container className="max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 mb-3 font-[Poppins]">
@@ -59,9 +60,14 @@ const Pricing = ({ plans = [] }) => {
                   )}
                 </div>
 
-                <button className="btn-ani w-full py-3 rounded-lg text-[14px] font-semibold transition-all mb-8 shadow-sm bg-primaryCta text-white">
+                <Link
+                  to="https://wa.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ani block text-center w-full py-3 rounded-lg text-[14px] font-semibold transition-all mb-8 shadow-sm bg-primaryCta text-white"
+                >
                   {plan.btnText}
-                </button>
+                </Link>
 
                 <p className="text-[12px] text-gray-500 mb-5 text-left font-semibold">
                   What's included:

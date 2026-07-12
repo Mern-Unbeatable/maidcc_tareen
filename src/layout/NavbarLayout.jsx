@@ -21,7 +21,9 @@ const NavbarLayout = () => {
           </Link>
 
           <Link
-            to="#"
+            to="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 bg-whatsapp hover:opacity-90 text-white px-5 py-2 rounded-full font-medium btn-ani"
           >
             <FaWhatsapp className="w-5 h-5" />

@@ -30,13 +30,20 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/maid-visa-application"
+              to="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-primaryCta btn-ani hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm"
             >
               <FaWhatsapp className="w-4 h-4" />
               <span>Get a maid visa</span>
             </Link>
-            <Link className="flex items-center justify-center gap-2 bg-secondaryCta hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm">
+            <Link
+              to="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-secondaryCta hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm"
+            >
               <FaWhatsapp className="w-4 h-4" />
               <span>Hired a maid</span>
             </Link>

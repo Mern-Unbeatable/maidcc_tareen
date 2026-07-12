@@ -1,5 +1,6 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router";
 import Container from "../../layout/Container";
 
 const CategoryHero = ({ heroData }) => {
@@ -29,11 +30,19 @@ const CategoryHero = ({ heroData }) => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="flex items-center justify-center gap-2 bg-primaryCta btn-ani hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium text-sm w-full sm:w-auto">
+            <Link
+              to="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-primaryCta btn-ani hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium text-sm w-full sm:w-auto"
+            >
               <FaWhatsapp className="w-4 h-4" />
               <span>Talk On WhatsApp</span>
-            </button>
-            <button className="flex items-center justify-center gap-2 bg-secondaryCta hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm w-full sm:w-auto">
+            </Link>
+            <button 
+              onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+              className="flex items-center justify-center gap-2 bg-secondaryCta hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm w-full sm:w-auto"
+            >
               <span>View Pricing</span>
             </button>
           </div>
