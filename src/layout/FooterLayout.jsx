@@ -1,4 +1,5 @@
 import bg from "../assets/footerbg.webp";
+import Container from "./Container";
 import {
   FaFacebookF,
   FaTwitter,
@@ -24,7 +25,7 @@ const FooterLayout = () => {
         </h1>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 grow flex items-center justify-center">
+      <Container className="relative z-10 max-w-5xl py-20 grow flex items-center justify-center">
         {/* Glassmorphism Card */}
         <div className="flex flex-col md:flex-row w-full max-w-[850px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]/50 backdrop-blur-3xl">
           {/* Left Column (Solid Blue) */}
@@ -77,14 +78,14 @@ const FooterLayout = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
 
       <div className="relative z-10 w-full border-t border-white/5 bg-black/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <Container className="max-w-7xl py-5">
           <p className="text-xs text-gray-400 font-medium">
             © {currentYear} maids.cc. All rights reserved.
           </p>
-        </div>
+        </Container>
       </div>
     </footer>
   );

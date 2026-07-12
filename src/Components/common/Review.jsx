@@ -4,6 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import Container from "../../layout/Container";
 
 import image1 from "../../assets/firstreview.webp";
 import image2 from "../../assets/secondreview.webp";
@@ -32,14 +33,14 @@ const Review = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="section-padding bg-white">
+      <Container className="max-w-7xl text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 font-[Poppins]">
           Trusted by Hundreds of Families Across
           <br />
           the UAE
         </h2>
-        <p className="section-desctext-gray-500 mb-16">
+        <p className="section-desc text-gray-500 mb-16">
           See what our customers say about hiring a maid and processing their
           maid visa with maids.cc.
         </p>
@@ -63,18 +64,16 @@ const Review = () => {
             {reviews.map((review) => (
               <SwiperSlide key={review.id} className="h-auto">
                 <div className="bg-white rounded-[24px] overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col h-full text-left relative">
-                  {/* Image with gradient fade at bottom */}
                   <div className="relative h-64 w-full shrink-0">
                     <img
                       src={review.image}
                       alt={review.name}
                       className="w-full h-full object-cover"
                     />
-                    {/* Fade to white gradient */}
+
                     <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-white to-transparent pointer-events-none"></div>
                   </div>
 
-                  {/* Text Content */}
                   <div className="px-8 pb-8 pt-0 flex flex-col grow relative z-10 -mt-2">
                     <span className="text-3xl font-serif text-gray-300 leading-none mb-4">
                       "
@@ -91,7 +90,6 @@ const Review = () => {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Buttons below Swiper */}
           <div className="flex items-center justify-center gap-4 mt-10">
             <button className="swiper-button-prev-custom w-10 h-10 rounded-full border border-[#f39c12] flex items-center justify-center text-[#f39c12] hover:bg-[#f39c12] hover:text-white transition-colors cursor-pointer group">
               <ArrowLeft className="w-5 h-5 stroke-[1.5] group-hover:scale-110 transition-transform" />
@@ -101,7 +99,7 @@ const Review = () => {
             </button>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

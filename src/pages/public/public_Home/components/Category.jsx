@@ -3,6 +3,7 @@ import secondImage from "../../../../assets/card2.webp";
 import thirldImage from "../../../../assets/card3.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router";
+import Container from "../../../../layout/Container";
 
 const Category = () => {
   const cards = [
@@ -37,7 +38,7 @@ const Category = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <Container className="section-padding max-w-7xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {cards.map((card) => (
           <div
@@ -71,7 +72,7 @@ const Category = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

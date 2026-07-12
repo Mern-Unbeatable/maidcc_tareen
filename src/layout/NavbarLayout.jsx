@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router";
 import { FaWhatsapp } from "react-icons/fa";
+import Container from "./Container";
 
 const NavbarLayout = () => {
   return (
     <nav className="w-full bg-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container className="max-w-7xl">
         <div className="flex justify-between items-center h-20">
           <Link
             to="/"
@@ -27,7 +28,7 @@ const NavbarLayout = () => {
             <span>WhatsApp</span>
           </Link>
         </div>
-      </div>
+      </Container>
     </nav>
   );
 };

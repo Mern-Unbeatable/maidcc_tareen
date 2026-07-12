@@ -27,7 +27,7 @@ const About = () => {
   ];
 
   return (
-    <section className="relative w-full py-24 flex items-center justify-center overflow-hidden">
+    <section className="relative w-full section-padding flex items-center justify-center overflow-hidden">
       <img
         src={bg}
         alt="About Us Background"
@@ -49,13 +49,13 @@ const About = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-5 shadow-lg">
+              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
                 <stat.icon className="w-6 h-6 text-secondaryCta stroke-2" />
               </div>
-              <h3 className="text-3xl font-bold text-white mb-1.5 font-[Poppins]">
+              <h3 className="text-[28px] font-bold text-white  font-[Poppins]">
                 {stat.value}
               </h3>
-              <p className="text-[11px] text-gray-300 font-medium tracking-wide">
+              <p className="text-[12px] lg:text-[15px] text-gray-300 font-medium tracking-wide">
                 {stat.label}
               </p>
             </div>
