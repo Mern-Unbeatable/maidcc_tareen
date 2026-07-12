@@ -59,7 +59,7 @@ const Pricing = ({ plans = [] }) => {
                   )}
                 </div>
 
-                <button className="w-full py-3 rounded-lg text-[14px] font-semibold transition-all mb-8 shadow-sm hover:shadow-md bg-primaryCta hover:bg-[#cc7000] text-white">
+                <button className="btn-ani w-full py-3 rounded-lg text-[14px] font-semibold transition-all mb-8 shadow-sm bg-primaryCta text-white">
                   {plan.btnText}
                 </button>
 

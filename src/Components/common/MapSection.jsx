@@ -12,13 +12,13 @@ const MapSection = () => {
 
       <div className="w-full h-[550px]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29200.633635435526!2d90.41674239999996!3d23.81578240000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c6fbd881c29b%3A0x9a7be444b99f2fa!2sKurmitola%20Multicare%20Specialized%20Hospital!5e0!3m2!1sen!2sbd!4v1783825745202!5m2!1sen!2sbd"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3564.7239281974!2d37.97903367596606!3d26.689310519654544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15a452ac509a65f3%3A0x70558fd82412c836!2sElephant%20Mountain!5e0!3m2!1sen!2sbd!4v1783837021617!5m2!1sen!2sbd"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
+          referrerPolicy="strict-origin-when-cross-origin"
           className="w-full h-full grayscale-20 contrast-[1.1]"
         ></iframe>
       </div>
