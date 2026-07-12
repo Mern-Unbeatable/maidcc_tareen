@@ -23,7 +23,7 @@ const Hero = () => {
             <br />A Maid Visa in Minutes
           </h1>
 
-          <p className="text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
+          <p className="section-desc text-gray-300 mb-8 max-w-lg leading-relaxed">
             Fast processing, trusted service, and 100% legal compliance. We
             handle the paperwork so you can focus on your family.
           </p>

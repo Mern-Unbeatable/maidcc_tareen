@@ -5,7 +5,7 @@ const MapSection = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 font-[Poppins]">
           Need face-to-face help?
         </h2>
-        <p className="text-[14px] text-gray-500">
+        <p className="section-desc text-gray-500">
           Visit one of our 23 branches
         </p>
       </div>

@@ -1,12 +1,16 @@
 import bg from "../assets/footerbg.webp";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const FooterLayout = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative bg-[#050505] w-full min-h-[500px] flex flex-col justify-end overflow-hidden">
-      {/* Checkered Background Pattern */}
       <div
         className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat"
         style={{
@@ -14,14 +18,12 @@ const FooterLayout = () => {
         }}
       ></div>
 
-      {/* Huge Background Text */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
         <h1 className="text-[180px] md:text-[280px] font-black text-primaryCta leading-none whitespace-nowrap opacity-100 tracking-tighter select-none font-[Poppins]">
           maids.cc
         </h1>
       </div>
 
-      {/* Main Content Area */}
       <div className="relative z-10 max-w-5xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 grow flex items-center justify-center">
         {/* Glassmorphism Card */}
         <div className="flex flex-col md:flex-row w-full max-w-[850px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]/50 backdrop-blur-3xl">
@@ -38,15 +40,17 @@ const FooterLayout = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4 mb-8">
-              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity"
-                >
-                  <Icon className="w-5 h-5 text-[#2d58bc]" />
-                </a>
-              ))}
+              {[FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn].map(
+                (Icon, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="w-10 h-10 bg-white rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity"
+                  >
+                    <Icon className="w-5 h-5 text-[#2d58bc]" />
+                  </a>
+                ),
+              )}
             </div>
 
             <p className="text-white/90 text-[13px] leading-relaxed max-w-[280px] font-medium">
@@ -75,7 +79,6 @@ const FooterLayout = () => {
         </div>
       </div>
 
-      {/* Copyright Bar */}
       <div className="relative z-10 w-full border-t border-white/5 bg-black/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <p className="text-xs text-gray-400 font-medium">

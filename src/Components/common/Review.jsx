@@ -39,7 +39,7 @@ const Review = () => {
           <br />
           the UAE
         </h2>
-        <p className="text-[14px] text-gray-500 mb-16">
+        <p className="section-desctext-gray-500 mb-16">
           See what our customers say about hiring a maid and processing their
           maid visa with maids.cc.
         </p>

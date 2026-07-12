@@ -12,7 +12,7 @@ const Pricing = ({ plans = [] }) => {
           <h2 className="text-[32px] md:text-[40px] font-bold text-gray-900 mb-3 font-[Poppins]">
             Transparent Pricing
           </h2>
-          <p className="text-[15px] text-gray-600 font-medium">
+          <p className="section-desc text-gray-600 font-medium">
             Choose the plan that fits your timeline and budget.
           </p>
         </div>

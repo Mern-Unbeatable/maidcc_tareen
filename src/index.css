@@ -22,3 +22,7 @@
 .section-padding-top {
   @apply pt-10 lg:pt-16;
 }
+
+.section-desc {
+  @apply text-[16px];
+}

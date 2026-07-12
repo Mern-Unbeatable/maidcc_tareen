@@ -24,7 +24,7 @@ const CategoryHero = ({ heroData }) => {
           <h1 className="text-3xl sm:text-5xl md:text-[50px] font-bold text-white leading-[1.15] tracking-tight mb-5 font-[Poppins]">
             {heroData.title}
           </h1>
-          <p className="text-[15px] text-white/90 mb-8 leading-relaxed font-medium max-w-[400px]">
+          <p className="section-desc text-white/90 mb-8 leading-relaxed font-medium max-w-[400px]">
             {heroData.subtitle}
           </p>
 

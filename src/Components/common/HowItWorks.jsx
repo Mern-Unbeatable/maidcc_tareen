@@ -29,7 +29,7 @@ const HowItWorks = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 font-[Poppins]">
           How It Works
         </h2>
-        <p className="text-[15px] text-gray-500 mb-16">
+        <p className="section-desc text-gray-500 mb-16">
           Simple 3-step process to get started today.
         </p>
 
@@ -45,7 +45,7 @@ const HowItWorks = () => {
               <h3 className="text-[19px] font-semibold text-gray-900 mb-3">
                 {step.title}
               </h3>
-              <p className="text-[14px] text-gray-500 leading-relaxed max-w-[300px]">
+              <p className="text-[14px] lg:text-[15px] text-gray-500 leading-relaxed max-w-[300px]">
                 {step.description}
               </p>
             </div>

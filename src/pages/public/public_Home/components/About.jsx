@@ -40,7 +40,7 @@ const About = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 font-[Poppins]">
           About Us
         </h2>
-        <p className="text-[15px] text-gray-300 max-w-2xl mx-auto mb-16 leading-relaxed">
+        <p className="section-desc text-gray-300 max-w-2xl mx-auto mb-16 leading-relaxed">
           We are dedicated to connecting families with trusted domestic helpers
           while providing comprehensive support throughout the entire hiring
           process.
