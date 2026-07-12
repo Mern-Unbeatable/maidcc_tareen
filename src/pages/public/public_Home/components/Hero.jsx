@@ -1,6 +1,7 @@
-import bg from "../../../../assets/herobg.png";
+import bg from "../../../../assets/herobg.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router";
+import Container from "../../../../layout/Container";
 
 const Hero = () => {
   return (
@@ -11,7 +12,7 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <Container className="relative z-10 max-w-7xl">
         <div className="max-w-2xl">
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-badge text-gray-200 text-xs font-medium mb-6">
             Trusted By 10,000+ Families
@@ -41,7 +42,7 @@ const Hero = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

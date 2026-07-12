@@ -14,3 +14,11 @@
 .btn-ani {
   @apply hover:scale-105 duration-300 transform transition-all ease-out cursor-pointer;
 }
+
+.section-padding {
+  @apply py-10 lg:py-16;
+}
+
+.section-padding-top {
+  @apply pt-10 lg:pt-16;
+}

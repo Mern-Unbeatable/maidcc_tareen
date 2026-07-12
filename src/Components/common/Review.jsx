@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
-import image1 from "../../assets/firstreview.png";
-import image2 from "../../assets/secondreview.png";
-import image3 from "../../assets/thirdreview.png";
+import image1 from "../../assets/firstreview.webp";
+import image2 from "../../assets/secondreview.webp";
+import image3 from "../../assets/thirdreview.webp";
 
 const Review = () => {
   const reviews = [

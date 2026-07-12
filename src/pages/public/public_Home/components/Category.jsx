@@ -1,6 +1,6 @@
-import firstImage from "../../../../assets/card1.png";
-import secondImage from "../../../../assets/card2.png";
-import thirldImage from "../../../../assets/card3.png";
+import firstImage from "../../../../assets/card1.webp";
+import secondImage from "../../../../assets/card2.webp";
+import thirldImage from "../../../../assets/card3.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router";
 

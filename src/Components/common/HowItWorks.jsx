@@ -1,4 +1,5 @@
 import { MessageCircle, FileText, ShieldCheck } from "lucide-react";
+import Container from "../../layout/Container";
 
 const HowItWorks = () => {
   const steps = [
@@ -23,8 +24,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="section-padding bg-white">
+      <Container className="max-w-7xl text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 font-[Poppins]">
           How It Works
         </h2>
@@ -50,7 +51,7 @@ const HowItWorks = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

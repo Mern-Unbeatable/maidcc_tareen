@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import Container from "../../layout/Container";
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(2); // 3rd item is open by default in design
@@ -52,8 +53,8 @@ const Faq = () => {
   };
 
   return (
-    <section className="py-24 bg-[#fafafa]">
-      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section-padding bg-[#fafafa]">
+      <Container className="max-w-[1000px]">
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-gray-900 mb-12 font-[Poppins]">
           Frequently Asked Questions
         </h2>
@@ -92,7 +93,7 @@ const Faq = () => {
             );
           })}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

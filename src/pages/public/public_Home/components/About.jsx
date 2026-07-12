@@ -1,5 +1,6 @@
-import bg from "../../../../assets/heroothers.png";
+import bg from "../../../../assets/heroothers.webp";
 import { Award, Star, Heart, TrendingUp } from "lucide-react";
+import Container from "../../../../layout/Container";
 
 const About = () => {
   const stats = [
@@ -35,7 +36,7 @@ const About = () => {
 
       <div className="absolute inset-0 bg-black/70"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+      <Container className="relative z-10 max-w-5xl text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 font-[Poppins]">
           About Us
         </h2>
@@ -60,7 +61,7 @@ const About = () => {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

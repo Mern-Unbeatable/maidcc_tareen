@@ -1,46 +1,68 @@
-import React from 'react';
+import React from "react";
+import { Users, Award, ShieldCheck } from "lucide-react";
+import Container from "../../layout/Container";
 
 const StatsSection = () => {
-  const stats = [
-    {
-      top: (
-        <div className="flex items-center gap-2">
-          <span>4.8</span>
-          <span className="text-[#f39c12] text-xl tracking-tighter">★★★★★</span>
-        </div>
-      ),
-      bottom: "Google Ratings"
-    },
-    {
-      top: "15,000+",
-      bottom: "Verified Placements"
-    },
-    {
-      top: "#1",
-      bottom: "Domestic Choice"
-    },
-    {
-      top: "25K+",
-      bottom: "Visas Issued"
-    }
-  ];
-
   return (
-    <div className="w-full bg-white border-b border-gray-100 relative z-20">
-      <div className="max-w-[850px] mx-auto px-4 py-10">
-        <div className="flex justify-between items-center text-center">
-          {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center gap-1.5">
-              <div className="text-[26px] font-bold text-gray-900 font-[Poppins] leading-none">
-                {stat.top}
-              </div>
-              <div className="text-[10px] font-bold text-gray-500 tracking-wide">
-                {stat.bottom}
-              </div>
-            </div>
-          ))}
+    <div className="w-full bg-white relative z-20 section-padding">
+      <Container className="max-w-6xl grid grid-cols-2 md:flex md:flex-row justify-between items-center gap-y-10 gap-x-2 md:gap-4">
+        {/* Stat 1: Google Ratings */}
+        <div className="flex flex-col items-center md:items-start justify-center gap-2 col-span-2 md:col-span-1 md:mt-6 mb-4 md:mb-0">
+          <div className="flex items-center gap-2">
+            <span className="text-[40px] md:text-[42px] font-bold text-primaryCta leading-none font-[Poppins]">
+              4.8
+            </span>
+            <span className="text-primaryCta text-3xl tracking-tighter mt-1">
+              ★★★★★
+            </span>
+          </div>
+          <div className="text-[18px] md:text-[20px] font-bold text-gray-900 font-[Poppins]">
+            Google Ratings
+          </div>
         </div>
-      </div>
+
+        {/* Stat 2: Verified Reviews */}
+        <div className="flex flex-col items-center justify-center gap-1">
+          <Users
+            className="w-6 h-6 md:w-7 md:h-7 text-gray-600 mb-1 md:mb-2"
+            strokeWidth={1.5}
+          />
+          <div className="text-[28px] md:text-[42px] font-medium text-gray-900 leading-none font-[Poppins] tracking-tight">
+            15,000+
+          </div>
+          <div className="text-[11px] md:text-[13px] font-medium text-gray-500">
+            Verified Reviews
+          </div>
+        </div>
+
+        {/* Stat 3: Domestic Employer */}
+        <div className="flex flex-col items-center justify-center gap-1">
+          <Award
+            className="w-6 h-6 md:w-7 md:h-7 text-gray-600 mb-1 md:mb-2"
+            strokeWidth={1.5}
+          />
+          <div className="text-[28px] md:text-[42px] font-medium text-gray-900 leading-none font-[Poppins] tracking-tight">
+            #1
+          </div>
+          <div className="text-[11px] md:text-[13px] font-medium text-gray-500">
+            Domestic Employer
+          </div>
+        </div>
+
+        {/* Stat 4: Visas Issued */}
+        <div className="flex flex-col items-center justify-center gap-1">
+          <ShieldCheck
+            className="w-6 h-6 md:w-7 md:h-7 text-gray-600 mb-1 md:mb-2"
+            strokeWidth={1.5}
+          />
+          <div className="text-[28px] md:text-[42px] font-medium text-gray-900 leading-none font-[Poppins] tracking-tight">
+            25K+
+          </div>
+          <div className="text-[11px] md:text-[13px] font-medium text-gray-500">
+            Visas Issued
+          </div>
+        </div>
+      </Container>
     </div>
   );
 };

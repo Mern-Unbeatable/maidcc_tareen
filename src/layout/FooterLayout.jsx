@@ -1,4 +1,4 @@
-import bg from "../assets/footerbg.png";
+import bg from "../assets/footerbg.webp";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const FooterLayout = () => {

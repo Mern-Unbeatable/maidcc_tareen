@@ -1,4 +1,4 @@
-import heroImg from "../assets/heroothers.png";
+import heroImg from "../assets/heroothers.webp";
 
 export const servicesData = {
   "maid-visa": {
