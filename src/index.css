@@ -26,3 +26,17 @@
 .section-desc {
   @apply text-[16px];
 }
+
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatY 2.2s ease-in-out infinite;
+}
