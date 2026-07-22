@@ -54,8 +54,6 @@
 //   );
 // };
 
-
-
 // export default Hero;
 
 import { useEffect, useRef, useState } from "react";
@@ -71,6 +69,7 @@ import avatar1 from "../../../../img//avatar-1.webp";
 import avatar2 from "../../../../img/avatar-2.webp";
 import avatar3 from "../../../../img/avatar-3.webp";
 import avatar4 from "../../../../img/avatar-4.webp";
+import CtaButton from "../../../../Components/common/CtaButton";
 
 const avatars = [avatar1, avatar2, avatar3, avatar4];
 
@@ -107,7 +106,7 @@ const useCountUp = (end, duration = 1500) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
 
     observer.observe(node);
@@ -144,24 +143,31 @@ const Hero = () => {
             </h1>
 
             <p className="text-gray-500 text-base md:text-lg mb-8 max-w-lg leading-relaxed">
-              Fast processing, trusted service, and 100% legal  <br/>
-              compliance. We handle the paperwork so you can focus<br/> on your family.
+              Fast processing, trusted service, and 100% legal <br />
+              compliance. We handle the paperwork so you can focus
+              <br /> on your family.
             </p>
 
             <div className="flex items-center gap-3 mb-10">
               {/* Primary CTA — fill sweep animation on hover */}
-   <Link
-  to="https://wa.me/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="animate-float relative overflow-hidden flex items-center justify-center bg-[#E67E00] text-white px-7 py-3.5 rounded-full font-semibold text-base group/cta transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
->
-  <span className="absolute inset-0 bg-[#c96e00] scale-x-0 origin-left transition-transform duration-500 ease-out group-hover/cta:scale-x-100"></span>
-  <span className="relative z-10">Get a maid visa</span>
-</Link>
+              {/* <Link
+                to="https://wa.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="animate-float relative overflow-hidden flex items-center justify-center bg-[#E67E00] text-white px-7 py-3.5 rounded-full font-semibold text-base group/cta transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+              >
+                <span className="absolute inset-0 bg-[#c96e00] scale-x-0 origin-left transition-transform duration-500 ease-out group-hover/cta:scale-x-100"></span>
+                <span className="relative z-10">Get a maid visa</span>
+              </Link> */}
+              <div className="flex items-center gap-3 mb-10">
+                <CtaButton to="https://wa.me/" float>
+                  Get a maid visa
+                </CtaButton>
+                <CtaButton to="https://wa.me/" variant="circle" float />
+              </div>
 
               {/* Circular arrow button — rotate + shift on hover */}
-              <Link
+              {/* <Link
                 to="https://wa.me/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -169,7 +175,7 @@ const Hero = () => {
                 aria-label="Get started"
               >
                 <FaArrowRight className="w-4 h-4" />
-              </Link>
+              </Link> */}
             </div>
 
             <div className="flex items-center gap-8">
@@ -191,7 +197,10 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="text-base leading-tight text-gray-700" ref={reviewRef}>
+              <div
+                className="text-base leading-tight text-gray-700"
+                ref={reviewRef}
+              >
                 <div className="flex items-center gap-1.5">
                   <span className="font-bold text-gray-900">4.8</span>
                   <div className="flex text-[#FE4D00]">
