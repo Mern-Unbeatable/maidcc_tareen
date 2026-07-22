@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { ArrowRight, ArrowLeft, Star } from "lucide-react";
@@ -42,13 +42,26 @@ const Review = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
-      <Container className="max-w-7xl">
+    <section className="my-4 animate-fade-in-up">
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+      `}</style>
+
+      <Container className="max-w-7xl bg-white rounded-2xl shadow-sm py-12 px-4 md:px-6">
         <div className="relative">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
+            grabCursor={true}
+            autoplay={{ delay: 4500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+            speed={800}
             breakpoints={{
               640: { slidesPerView: 1.2 },
               1024: { slidesPerView: 2.6 },
@@ -61,23 +74,23 @@ const Review = () => {
           >
             {/* Static intro slide */}
             <SwiperSlide className="h-auto">
-              <div className="bg-[#F3EFE8] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[420px] text-left">
+              <div className="bg-[#F3EFE8] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[390px] text-left transition-all duration-500 hover:shadow-md">
                 <div>
-                  <h2 className="text-3xl md:text-[34px] font-medium text-gray-900 leading-[1.15] mb-6 font-[Poppins]">
+                  <h2 className="text-3xl md:text-4xl font-medium text-gray-900 leading-[1.15] mb-6 font-[Poppins]">
                     Trusted by Hundreds of Families Across the UAE
                   </h2>
-                  <p className="text-gray-500 text-[14px] leading-relaxed max-w-xs">
+                  <p className="text-gray-500 text-base md:text-lg max-w-2xl">
                     See what our customers say about hiring a maid and
                     processing their maid visa with maids.cc.
                   </p>
                 </div>
 
                 <div className="flex items-center gap-4 mt-10">
-                  <button className="swiper-button-prev-custom w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors cursor-pointer group">
-                    <ArrowLeft className="w-4 h-4 stroke-[1.5] group-hover:scale-110 transition-transform" />
+                  <button className="swiper-button-prev-custom w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer group">
+                    <ArrowLeft className="w-4 h-4 stroke-[1.5] group-hover:-translate-x-0.5 transition-transform" />
                   </button>
-                  <button className="swiper-button-next-custom w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-colors cursor-pointer group">
-                    <ArrowRight className="w-4 h-4 stroke-[1.5] group-hover:scale-110 transition-transform" />
+                  <button className="swiper-button-next-custom w-11 h-11 rounded-full border border-gray-300 flex items-center justify-center text-gray-900 hover:bg-gray-900 hover:text-white hover:border-gray-900 transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer group">
+                    <ArrowRight className="w-4 h-4 stroke-[1.5] group-hover:translate-x-0.5 transition-transform" />
                   </button>
                 </div>
               </div>
@@ -86,22 +99,22 @@ const Review = () => {
             {/* Review slides */}
             {reviews.map((review) => (
               <SwiperSlide key={review.id} className="h-auto">
-                <div className="bg-[#F3EFE8] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[420px] text-left">
+                <div className="bg-[#f5f3f0] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[390px] text-left shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl group">
                   <div>
-                    <h3 className="text-2xl font-medium text-gray-900 leading-[1.2] mb-6 font-[Poppins]">
+                    <h3 className="text-2xl font-semibold text-gray-900 leading-[1.2] mb-6 transition-colors duration-300 group-hover:text-[#ff4d00]">
                       {review.title}
                     </h3>
-                    <p className="text-[14px] text-gray-600 leading-relaxed">
+                    <p className="text-[14px] md:text-base text-gray-600 leading-relaxed">
                       {review.text}
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between mt-10">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
                       <img
                         src={review.avatar}
                         alt={review.name}
-                        className="w-11 h-11 rounded-full object-cover"
+                        className="w-11 h-11 rounded-full object-cover border-2 border-white shadow-md"
                       />
                       <div>
                         <p className="text-[15px] font-semibold text-gray-900 leading-tight">
@@ -117,11 +130,12 @@ const Review = () => {
                       <span className="text-[14px] font-semibold text-gray-900">
                         {review.rating}
                       </span>
-                      <div className="flex text-[#E67E00]">
+                      <div className="flex text-[#ff4d00]">
                         {Array.from({ length: 5 }).map((_, i) => (
                           <Star
                             key={i}
-                            className="w-3.5 h-3.5 fill-[#E67E00]"
+                            className="w-3.5 h-3.5 fill-[#ff4d00] transition-transform duration-300 hover:scale-125"
+                            style={{ transitionDelay: `${i * 50}ms` }}
                           />
                         ))}
                       </div>

@@ -24,7 +24,7 @@ const CtaButton = ({
         aria-label={rest["aria-label"] || "Get started"}
         className={`${floatClass} flex items-center justify-center bg-[#E67E00] text-white w-[52px] h-[52px] rounded-full transition-all duration-300 hover:bg-[#c96e00] hover:rotate-45 hover:scale-105 active:scale-95 ${className}`}
       >
-        <Icon className="w-4 h-4" />
+        <Icon className="w-6 h-6" />
       </Link>
     );
   }

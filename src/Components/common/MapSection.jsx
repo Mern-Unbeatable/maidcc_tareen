@@ -1,6 +1,6 @@
 const MapSection = () => {
   return (
-    <section className="section-padding-top pb-0 bg-white">
+    <section className="mt-10 pb-0 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 font-[Poppins]">
           Need face-to-face help?

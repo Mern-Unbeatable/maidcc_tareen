@@ -1,61 +1,3 @@
-// import bg from "../../../../assets/herobg.webp";
-// import { FaWhatsapp } from "react-icons/fa";
-// import { Link } from "react-router";
-// import Container from "../../../../layout/Container";
-
-// const Hero = () => {
-//   return (
-//     <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden flex items-center">
-//       <img
-//         src={bg}
-//         alt="Hero background"
-//         className="absolute inset-0 w-full h-full object-cover"
-//       />
-
-//       <Container className="relative z-10 max-w-7xl">
-//         <div className="max-w-2xl">
-//           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-badge text-gray-200 text-xs font-medium mb-6">
-//             Trusted By 10,000+ Families
-//           </div>
-
-//           <h1 className="text-4xl md:text-5xl lg:text-[54px] font-semibold text-white leading-[1.15] mb-6 font-[Poppins]">
-//             Hire a Maid or Apply for
-//             <br />A Maid Visa in Minutes
-//           </h1>
-
-//           <p className="section-desc text-gray-300 mb-8 max-w-lg leading-relaxed">
-//             Fast processing, trusted service, and 100% legal compliance. We
-//             handle the paperwork so you can focus on your family.
-//           </p>
-
-//           <div className="flex flex-col sm:flex-row gap-4">
-//             <Link
-//               to="https://wa.me/"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="flex items-center justify-center gap-2 bg-primaryCta btn-ani hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm"
-//             >
-//               <FaWhatsapp className="w-4 h-4" />
-//               <span>Get a maid visa</span>
-//             </Link>
-//             <Link
-//               to="https://wa.me/"
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="flex items-center justify-center gap-2 bg-secondaryCta hover:opacity-90 text-white px-6 py-2.5 rounded-full font-medium btn-ani text-sm"
-//             >
-//               <FaWhatsapp className="w-4 h-4" />
-//               <span>Hired a maid</span>
-//             </Link>
-//           </div>
-//         </div>
-//       </Container>
-//     </div>
-//   );
-// };
-
-// export default Hero;
-
 import { useEffect, useRef, useState } from "react";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import { Link } from "react-router";
@@ -91,7 +33,6 @@ const useCountUp = (end, duration = 1500) => {
 
           const step = (now) => {
             const progress = Math.min((now - startTime) / duration, 1);
-            // ease-out for a nice deceleration near the end
             const eased = 1 - Math.pow(1 - progress, 3);
             setCount(Math.floor(eased * end));
 
@@ -106,7 +47,7 @@ const useCountUp = (end, duration = 1500) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 },
+      { threshold: 0.4 }
     );
 
     observer.observe(node);
@@ -119,7 +60,6 @@ const useCountUp = (end, duration = 1500) => {
 const Hero = () => {
   const [reviewCount, reviewRef] = useCountUp(2000, 1600);
 
-  // Format 2000 -> "2k+", 1450 -> "1.4k+", etc.
   const formatCount = (num) => {
     if (num >= 1000) {
       const val = num / 1000;
@@ -129,36 +69,54 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-full bg-white py-4">
-      <Container className="max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          {/* Left card — content */}
-          <div className="border border-[#EDE8DE] rounded-2xl px-6 py-8 flex flex-col justify-start items-start">
-            <div className="inline-flex w-fit items-center justify-center px-4 py-1.5 rounded-full bg-[#102A63] text-white text-sm font-semibold mb-6">
-              Trusted By 10,000+ Families
-            </div>
+    <>
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInRight {
+          from { opacity: 0; transform: translateX(40px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes popIn {
+          0% { opacity: 0; transform: scale(0.5); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes softPulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(16, 42, 99, 0.1); }
+          50% { box-shadow: 0 0 0 8px rgba(16, 42, 99, 0); }
+        }
+      `}</style>
 
-            <h1 className="text-4xl md:text-5xl  font-semibld text-gray-900 leading-[1.1] mb-6 font-[Poppins]">
+      <div className="overflow-hidden">
+        <Container className="max-w-7xl my-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            
+            {/* Left card — content */}
+            <div className="border bg-white border-[#EDE8DE] rounded-2xl px-6 py-12 flex flex-col justify-start items-start">
+              
+              {/* Badge */}
+              <div className="inline-flex w-fit items-center justify-center px-4 py-1.5 rounded-full bg-[#102A63] text-white text-sm font-semibold mb-6 opacity-0 animate-[fadeInUp_0.6s_ease-out_0.1s_forwards] hover:scale-105 transition-transform duration-300 cursor-default">
+                Trusted By 10,000+ Families
+              </div>
+
+                <h1 className="text-4xl md:text-5xl  lg:text-[56px] font-semibld text-gray-900 leading-[1.1] mb-6 font-[Poppins]">
               Hire a Maid or Apply for A Maid Visa in Minutes
             </h1>
 
-            <p className="text-gray-500 text-base md:text-lg mb-8 max-w-lg leading-relaxed">
-              Fast processing, trusted service, and 100% legal <br />
-              compliance. We handle the paperwork so you can focus
-              <br /> on your family.
-            </p>
+              {/* Paragraph */}
+              <p className="text-gray-500 text-base md:text-lg mb-8 max-w-lg leading-relaxed opacity-0 animate-[fadeInUp_0.6s_ease-out_0.3s_forwards]">
+                Fast processing, trusted service, and 100% legal <br />
+                compliance. We handle the paperwork so you can focus
+                <br /> on your family.
+              </p>
 
-            <div className="flex items-center gap-3 mb-10">
-              {/* Primary CTA — fill sweep animation on hover */}
-              {/* <Link
-                to="https://wa.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="animate-float relative overflow-hidden flex items-center justify-center bg-[#E67E00] text-white px-7 py-3.5 rounded-full font-semibold text-base group/cta transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
-              >
-                <span className="absolute inset-0 bg-[#c96e00] scale-x-0 origin-left transition-transform duration-500 ease-out group-hover/cta:scale-x-100"></span>
-                <span className="relative z-10">Get a maid visa</span>
-              </Link> */}
+            
               <div className="flex items-center gap-3 mb-10">
                 <CtaButton to="https://wa.me/" float>
                   Get a maid visa
@@ -166,92 +124,100 @@ const Hero = () => {
                 <CtaButton to="https://wa.me/" variant="circle" float />
               </div>
 
-              {/* Circular arrow button — rotate + shift on hover */}
-              {/* <Link
-                to="https://wa.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center bg-[#E67E00] text-white w-[52px] h-[52px] rounded-full transition-all duration-300 hover:bg-[#c96e00] hover:rotate-45 hover:scale-105 active:scale-95"
-                aria-label="Get started"
-              >
-                <FaArrowRight className="w-4 h-4" />
-              </Link> */}
-            </div>
-
-            <div className="flex items-center gap-8">
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-3">
-                  {avatars.map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt="Expert"
-                      className="w-15 h-15 rounded-full border-2 border-white object-cover"
-                    />
-                  ))}
-                </div>
-                <p className="text-base leading-tight text-gray-700">
-                  More than
-                  <br />
-                  <span className="font-bold text-gray-900">200 Experts</span>
-                </p>
-              </div>
-
-              <div
-                className="text-base leading-tight text-gray-700"
-                ref={reviewRef}
-              >
-                <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-gray-900">4.8</span>
-                  <div className="flex text-[#FE4D00]">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <FaStar key={i} className="w-3.5 h-3.5" />
+              {/* Trust Indicators (Avatars + Reviews) */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 opacity-0 animate-[fadeInUp_0.6s_ease-out_0.5s_forwards]">
+                
+                {/* Avatars with Float Animation */}
+                <div className="flex items-center gap-3 animate-[float_4s_ease-in-out_infinite]">
+                  <div className="flex -space-x-4">
+                    {avatars.map((src, i) => (
+                      <img
+                        key={i}
+                        src={src}
+                        alt="Expert"
+                        className="w-12 h-12 md:w-15 md:h-15 rounded-full border-2 border-white object-cover shadow-md transition-transform duration-300 hover:scale-110 hover:z-10"
+                      />
                     ))}
                   </div>
+                  <p className="text-base leading-tight font-bold text-gray-700">
+                    More than
+                    <br />
+                    <span className="font-bold text-gray-900">200 Experts</span>
+                  </p>
                 </div>
-                <p>
-                  <span className="font-bold text-gray-900">
-                    {formatCount(reviewCount)}
-                  </span>{" "}
-                  Reviews on Google
-                </p>
-              </div>
-            </div>
-          </div>
 
-          {/* Right card — image grid */}
-          <div className="border border-[#EDE8DE]  rounded-2xl p-4 grid grid-cols-2 gap-4 ">
-            <div className="flex flex-col gap-4">
-              <img
-                src={maidMopImg}
-                alt="Maid cleaning a kitchen"
-                className="flex-[2.2] w-full object-cover rounded-2xl"
-              />
-              <div className="flex-1 bg-[#EDE8DE] rounded-2xl flex flex-col items-center justify-center text-center px-4">
-                <p className="text-3xl md:text-4xl font-bold text-gray-900">
-                  100%
-                </p>
-                <p className="text-sm text-gray-600 mt-1">
-                  Satisfaction Guarantee
-                </p>
+                {/* Reviews with Pop-in Stars */}
+                <div
+                  className="text-base leading-tight text-gray-700 p-3 rounded-xl hover:bg-gray-50 transition-colors duration-300"
+                  ref={reviewRef}
+                >
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <span className="text-lg font-bold text-gray-900">4.8</span>
+                    <div className="flex text-[#FE4D00]">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <FaStar 
+                          key={i} 
+                          className="w-4 h-4 opacity-0 animate-[popIn_0.4s_ease-out_forwards]"
+                          style={{ animationDelay: `${0.6 + (i * 0.1)}s` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <p>
+                    <span className="font-semibold text-gray-900">
+                      {formatCount(reviewCount)}
+                    </span>{" "}
+                    Reviews on Google
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <img
-                src={maidTowelsImg}
-                alt="Maid holding folded towels"
-                className="flex-1 w-full object-cover rounded-2xl"
-              />
-              <img
-                src={girlBeachImg}
-                alt="Child relaxing at the beach"
-                className="flex-1 w-full object-cover rounded-2xl"
-              />
+
+            {/* Right card — image grid */}
+            <div className="bg-white border border-[#EDE8DE] rounded-2xl p-4 grid grid-cols-2 gap-4 opacity-0 animate-[fadeInRight_0.8s_ease-out_0.3s_forwards]">
+              
+              {/* Left Column of Grid */}
+              <div className="flex flex-col gap-4">
+                <div className="group flex-[2.2] w-full overflow-hidden rounded-2xl cursor-pointer">
+                  <img
+                    src={maidMopImg}
+                    alt="Maid cleaning a kitchen"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"
+                  />
+                </div>
+                <div className="flex-1 bg-[#F8F9FA] border border-[#EDE8DE] rounded-2xl flex flex-col items-center justify-center text-center px-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-[softPulse_3s_ease-in-out_infinite]">
+                  <p className="text-3xl md:text-4xl font-bold text-[#102A63]">
+                    100%
+                  </p>
+                  <p className="text-sm md:text-base text-gray-600 mt-1 font-medium">
+                    Satisfaction Guarantee
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column of Grid */}
+              <div className="flex flex-col gap-4">
+                <div className="group flex-1 w-full overflow-hidden rounded-2xl cursor-pointer">
+                  <img
+                    src={maidTowelsImg}
+                    alt="Maid holding folded towels"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                </div>
+                <div className="group flex-1 w-full overflow-hidden rounded-2xl cursor-pointer">
+                  <img
+                    src={girlBeachImg}
+                    alt="Child relaxing at the beach"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  />
+                </div>
+              </div>
+
             </div>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </>
   );
 };
 
