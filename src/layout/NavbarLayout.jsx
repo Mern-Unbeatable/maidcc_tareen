@@ -1,26 +1,51 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router"; 
 import { FaWhatsapp } from "react-icons/fa";
 import Container from "./Container";
 
 const NavbarLayout = () => {
   return (
-    <nav className="w-full bg-white sticky top-0 z-50">
-      <Container className="max-w-7xl">
-        <div className="flex justify-between items-center h-20">
-          <Link
-            to="/"
-            className="flex flex-col justify-center no-underline hover:opacity-90 transition-opacity"
-          >
-            <span className="text-4xl font-black text-logo leading-none tracking-tight font-[Poppins]">
-              maids.cc
-            </span>
-            <span className="text-[13px] font-bold text-primaryCta tracking-wide">
-              <span className="text-logo">+nannies</span> +visa services
-            </span>
-          </Link>
+    <>
+      <style>{`
+        @keyframes slideDown {
+          from { transform: translateY(-100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeInUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes pulseGlow {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+          50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-4px); }
+        }
+      `}</style>
 
-          <Link
+      <nav className="w-full sticky top-0 z-50 bg-white/95 backdrop-blur-md rounded-b-2xl shadow-sm animate-[slideDown_0.6s_ease-out_forwards]">
+        <Container className="max-w-7xl py-4 px-4 md:px-6">
+          <div className="flex justify-between items-center h-16">
+            
+            <Link
+              to="/"
+              className="flex flex-col justify-center no-underline group"
+            >
+              <span 
+                className="text-4xl font-black text-logo leading-none tracking-tight font-[Poppins] opacity-0 animate-[fadeInUp_0.6s_ease-out_0.2s_forwards] transition-all duration-500 ease-in-out group-hover:tracking-wider group-hover:scale-105 group-hover:text-primaryCta"
+              >
+                maids.cc
+              </span>
+              <span 
+                className="text-[13px] font-bold text-primaryCta tracking-wide opacity-0 animate-[fadeInUp_0.6s_ease-out_0.4s_forwards] transition-all duration-500 ease-in-out group-hover:translate-x-1"
+              >
+                <span className="text-logo transition-colors duration-300 group-hover:text-whatsapp">+nannies</span> +visa services
+              </span>
+            </Link>
+
+            <Link
             to="https://wa.me/"
             target="_blank"
             rel="noopener noreferrer"
@@ -29,9 +54,11 @@ const NavbarLayout = () => {
             <FaWhatsapp className="w-5 h-5" />
             <span>WhatsApp</span>
           </Link>
-        </div>
-      </Container>
-    </nav>
+            
+          </div>
+        </Container>
+      </nav>
+    </>
   );
 };
 

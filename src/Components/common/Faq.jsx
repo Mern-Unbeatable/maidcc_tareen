@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Container from "../../layout/Container";
 
 const Faq = () => {
@@ -53,47 +53,89 @@ const Faq = () => {
   };
 
   return (
-    <section className="section-padding bg-[#fafafa]">
-      <Container className="max-w-[1000px]">
+    <section>
+      <Container className="max-w-7xl bg-[#f7fafc] rounded-2xl shadow-sm py-12 px-4 md:px-6">
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-gray-900 mb-12 font-[Poppins]">
           Frequently Asked Questions
         </h2>
-        
+
         <div className="flex flex-col gap-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`transition-all duration-300 cursor-pointer overflow-hidden ${
-                  isOpen ? "bg-[#e2e2e2]" : "bg-white shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+                style={{
+                  animation: `faqFadeIn 0.5s ease forwards`,
+                  animationDelay: `${index * 60}ms`,
+                  opacity: 0,
+                }}
+                className={`rounded-xl transition-colors duration-300 ease-out cursor-pointer overflow-hidden border ${
+                  isOpen
+                    ? "bg-[#e2e2e2] border-[#d5d5d5]"
+                    : "bg-white border-transparent shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:-translate-y-[1px]"
                 }`}
                 onClick={() => toggleFaq(index)}
               >
-                <div className="px-6 py-5 flex justify-between items-center">
+                <div className="px-6 py-5 flex justify-between items-center gap-4">
                   <span
-                    className={`text-[15px] ${
+                    className={`text-lg transition-all duration-300 ${
                       isOpen ? "font-semibold text-gray-900" : "font-medium text-gray-700"
                     }`}
                   >
                     {faq.question}
                   </span>
-                  {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500 shrink-0" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400 shrink-0" />
-                  )}
+                  <ChevronDown
+                    className={`w-5 h-5 shrink-0 transition-transform duration-300 ease-out ${
+                      isOpen ? "rotate-180 text-gray-600" : "rotate-0 text-gray-400"
+                    }`}
+                  />
                 </div>
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-0 text-[14px] text-gray-600 leading-relaxed font-medium">
-                    {faq.answer}
+
+                {/* Smooth height animation using grid-template-rows trick */}
+                <div
+                  className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+                  style={{
+                    gridTemplateRows: isOpen ? "1fr" : "0fr",
+                  }}
+                >
+                  <div className="overflow-hidden">
+                    <div
+                      className={`px-6 pb-6 pt-0 text-base text-gray-600 leading-relaxed font-medium transition-all duration-300 ${
+                        isOpen
+                          ? "opacity-100 translate-y-0 delay-100"
+                          : "opacity-0 -translate-y-1"
+                      }`}
+                    >
+                      {faq.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
         </div>
       </Container>
+
+      <style>{`
+        @keyframes faqFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
