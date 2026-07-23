@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// import firstImage from "../../../../img/mask_radial.webp";
 import firstImage from "../../../../assets/card1.webp";
 import secondImage from "../../../../assets/card2.webp";
 import thirldImage from "../../../../assets/card3.webp";
