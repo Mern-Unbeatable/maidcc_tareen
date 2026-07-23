@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import aboutImg from "../../../../assets/Abdut_us.webp";
+import aboutImg from "../../../../assets/Frame.png";
 import { Award, Star, Heart } from "lucide-react";
 import Container from "../../../../layout/Container";
 
