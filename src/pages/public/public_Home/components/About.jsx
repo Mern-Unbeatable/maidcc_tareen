@@ -60,7 +60,7 @@ const About = () => {
         }
       `}</style>
 
-      <section className="w-full py-4" ref={ref}>
+      <section className=" " ref={ref}>
         <Container className="max-w-7xl bg-white rounded-2xl shadow-sm py-12 px-4 md:px-6 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             

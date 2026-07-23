@@ -48,7 +48,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="my-4" ref={ref}>
+    <section className="my-5" ref={ref}>
       <Container className="max-w-7xl bg-white rounded-2xl shadow-sm">
         <div className="rounded-[24px] p-6 md:p-10 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">

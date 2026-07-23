@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import firstImage from "../../../../img/mask_radial.webp";
+// import firstImage from "../../../../img/mask_radial.webp";
+import firstImage from "../../../../assets/card1.webp";
 import secondImage from "../../../../assets/card2.webp";
 import thirldImage from "../../../../assets/card3.webp";
 import { FaWhatsapp, FaArrowRight, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { Link } from "react-router";
 import Container from "../../../../layout/Container";
 
-// হালকা Scroll Animation হুক (ভিউপোর্টে আসলে ট্রিগার হবে)
 const useInView = (options = {}) => {
   const ref = useRef(null);
   const [isInView, setIsInView] = useState(false);
@@ -60,7 +60,7 @@ const Category = () => {
   ];
 
   return (
-    <div className="py-10" ref={ref}>
+    <div className="" ref={ref}>
       <Container className="max-w-7xl bg-white rounded-2xl shadow-sm py-12 px-4 md:px-6">
         
         <div 
@@ -119,15 +119,15 @@ const Category = () => {
                   {card.subtitle}
                 </p>
 
-                <div className="flex flex-wrap items-center gap-3 mt-auto">
+                <div className="flex flex-wrap items-center justify-center gap-3 mt-auto">
                   <Link
                     to={`/services/${card.slug}`}
-                    className="relative flex items-center gap-2 overflow-hidden bg-white text-gray-800 px-6 py-3 rounded-full text-sm font-semibold border border-gray-200 group/btn transition-all duration-300 hover:border-[#E67E00] hover:shadow-md"
+                    className="relative flex items-center gap-2 overflow-hidden bg-white text-gray-800 px-3 py-2 rounded-full text-base font-semibold border border-gray-200 group/btn transition-all duration-300 hover:border-[#E67E00] hover:shadow-md"
                   >
                     <span className="absolute -left-1 -bottom-5 w-8 h-8 bg-[#E67E00] rounded-full origin-center transition-transform duration-700 ease-out group-hover/btn:scale-[15] -z-0"></span>
                     <span className="relative z-10 transition-colors duration-500 group-hover/btn:text-white flex items-center gap-2">
                       Learn More
-                      <FaArrowRight className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      {/* <FaArrowRight className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-1" /> */}
                     </span>
                   </Link>
 
@@ -135,7 +135,7 @@ const Category = () => {
                     to="https://wa.me/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/wa flex items-center gap-2 bg-[#25479D] text-white px-5 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:bg-[#1a2f56] hover:scale-105 hover:shadow-[0_4px_20px_rgba(37,71,157,0.4)] active:scale-95"
+                    className="group/wa flex items-center gap-2 bg-[#25479D] text-white px-3 py-2 rounded-full text-base font-medium transition-all duration-300 hover:bg-[#1a2f56] hover:scale-105 hover:shadow-[0_4px_20px_rgba(37,71,157,0.4)] active:scale-95"
                   >
                     <FaWhatsapp className="w-4 h-4 transition-transform duration-300 group-hover/wa:-rotate-12 group-hover/wa:scale-110" />
                     <span>{card.primaryBtnText}</span>

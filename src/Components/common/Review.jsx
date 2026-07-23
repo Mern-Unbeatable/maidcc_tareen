@@ -42,7 +42,7 @@ const Review = () => {
   ];
 
   return (
-    <section className="my-4 animate-fade-in-up">
+    <section className="my-5 animate-fade-in-up">
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(30px); }
