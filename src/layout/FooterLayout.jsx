@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import Container from "./Container";
 import CtaButton from "../Components/common/CtaButton";
 
-// হালকা Scroll Animation হুক (ভিউপোর্টে আসলে ট্রিগার হবে)
 const useInView = (options = {}) => {
   const ref = useRef(null);
   const [isInView, setIsInView] = useState(false);
@@ -14,7 +13,7 @@ const useInView = (options = {}) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsInView(true);
-          observer.disconnect(); // একবারই অ্যানিমেট হবে পারফরম্যান্সের জন্য
+          observer.disconnect(); 
         }
       },
       { threshold: 0.1, ...options },
@@ -51,9 +50,7 @@ const FooterLayout = () => {
       <footer className="my-5 overflow-hidden" ref={ref}>
         <div className="mx-auto max-w-7xl bg-white rounded-2xl shadow-sm py-12 px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* ================= LEFT COLUMN ================= */}
             <div className="flex flex-col gap-4">
-              {/* 1. Brand card */}
               <div
                 className={`bg-[#F3EFE8] rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg ${
                   isInView
@@ -89,7 +86,6 @@ const FooterLayout = () => {
                 </div>
               </div>
 
-              {/* 2. Social card */}
               <div
                 className={`bg-[#F3EFE8] rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg ${
                   isInView
@@ -120,9 +116,7 @@ const FooterLayout = () => {
               </div>
             </div>
 
-            {/* ================= RIGHT COLUMN ================= */}
             <div className="flex flex-col gap-4">
-              {/* 3. Newsletter card */}
               <div
                 className={`bg-[#F3EFE8] rounded-2xl p-8 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg ${
                   isInView
@@ -154,7 +148,6 @@ const FooterLayout = () => {
                 </form>
               </div>
 
-              {/* 4. Services + Contact card */}
               <div
                 className={`bg-[#F3EFE8] rounded-2xl p-8 flex flex-col grow transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-lg ${
                   isInView
@@ -201,7 +194,6 @@ const FooterLayout = () => {
                   </div>
                 </div>
 
-                {/* Bottom bar inside the card */}
                 <div className="flex flex-wrap items-center justify-between gap-3 mt-auto pt-10 border-t border-gray-200/50">
                   <div className="flex items-center gap-6">
                     <Link

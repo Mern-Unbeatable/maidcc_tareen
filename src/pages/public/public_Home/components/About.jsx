@@ -64,10 +64,8 @@ const About = () => {
         <Container className="max-w-7xl bg-white rounded-2xl shadow-sm py-12 px-4 md:px-6 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             
-            {/* Left card — orange background */}
             <div className="bg-[#E67E00] rounded-[24px] px-8 py-12 md:px-14 md:py-16 flex flex-col items-center justify-center text-center relative overflow-hidden">
               
-              {/* Decorative background circle (optional subtle detail) */}
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-black/10 rounded-full blur-2xl" />
 
@@ -117,7 +115,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Right — image with Hover Zoom & Scroll Entrance */}
             <div 
               className={`rounded-[24px] overflow-hidden h-[320px] lg:h-auto group transition-all duration-700 delay-300 ease-out ${
                 isInView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
@@ -129,7 +126,6 @@ const About = () => {
                 className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110 group-hover:rotate-1"
               />
               
-              {/* Optional: Subtle overlay on hover to make it feel interactive */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500 pointer-events-none rounded-[24px]" />
             </div>
 
