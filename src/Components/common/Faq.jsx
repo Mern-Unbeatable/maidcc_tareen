@@ -92,7 +92,6 @@ const Faq = () => {
                   />
                 </div>
 
-                {/* Smooth height animation using grid-template-rows trick */}
                 <div
                   className="grid transition-[grid-template-rows] duration-300 ease-in-out"
                   style={{
