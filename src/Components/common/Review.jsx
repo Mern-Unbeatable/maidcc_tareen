@@ -72,7 +72,6 @@ const Review = () => {
             }}
             className="pb-2"
           >
-            {/* Static intro slide */}
             <SwiperSlide className="h-auto">
               <div className="bg-[#F3EFE8] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[390px] text-left transition-all duration-500 hover:shadow-md">
                 <div>
@@ -96,7 +95,6 @@ const Review = () => {
               </div>
             </SwiperSlide>
 
-            {/* Review slides */}
             {reviews.map((review) => (
               <SwiperSlide key={review.id} className="h-auto">
                 <div className="bg-[#f5f3f0] rounded-[24px] p-8 flex flex-col justify-between h-full min-h-[390px] text-left shadow-sm transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl group">
