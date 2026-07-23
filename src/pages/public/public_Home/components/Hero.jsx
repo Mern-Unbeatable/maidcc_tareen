@@ -15,7 +15,6 @@ import CtaButton from "../../../../Components/common/CtaButton";
 
 const avatars = [avatar1, avatar2, avatar3, avatar4];
 
-// Counts up from 0 to `end` once the element enters the viewport
 const useCountUp = (end, duration = 1500) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
