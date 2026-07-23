@@ -96,7 +96,7 @@ const Category = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
-                <div
+                {/* <div
                   className={`absolute top-4 right-4 w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 ${
                     card.badgeStyle === "primary"
                       ? "bg-[#E67E00] text-white"
@@ -108,7 +108,7 @@ const Category = () => {
                   ) : (
                     <FaArrowUpRightFromSquare className="w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                   )}
-                </div>
+                </div> */}
               </div>
 
               <div className="px-3 pt-5 pb-3 flex flex-col flex-1">

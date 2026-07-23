@@ -4,9 +4,9 @@ import { Link } from "react-router";
 import Container from "../../../../layout/Container";
 
 // Replace these with your actual asset imports
-import maidMopImg from "../../../../img/maidMopImg.webp";
-import maidTowelsImg from "../../../../img/maidTowelsImg.webp";
-import girlBeachImg from "../../../../img/girlBeachImg.webp";
+import maidMopImg from "../../../../assets/Home_img_1.png";
+import maidTowelsImg from "../../../../assets/Home_img_2.png";
+import girlBeachImg from "../../../../assets/Home_img_3.png";
 import avatar1 from "../../../../img//avatar-1.webp";
 import avatar2 from "../../../../img/avatar-2.webp";
 import avatar3 from "../../../../img/avatar-3.webp";
@@ -15,7 +15,6 @@ import CtaButton from "../../../../Components/common/CtaButton";
 
 const avatars = [avatar1, avatar2, avatar3, avatar4];
 
-// Counts up from 0 to `end` once the element enters the viewport
 const useCountUp = (end, duration = 1500) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
