@@ -97,7 +97,6 @@ const Hero = () => {
         <Container className="max-w-7xl my-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             
-            {/* Left card — content */}
             <div className="border bg-white border-[#EDE8DE] rounded-2xl px-6 py-12 flex flex-col justify-start items-start">
               
               {/* Badge */}
